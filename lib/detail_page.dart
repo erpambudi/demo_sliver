@@ -31,16 +31,20 @@ class DetailPage extends StatelessWidget {
           SliverLayoutBuilder(
             builder: (context, constraints) {
               final scrolled = constraints.scrollOffset >
-                  MediaQuery.of(context).size.height / 2.5;
+                  MediaQuery.of(context).size.height / 3;
               return SliverAppBar(
                 pinned: true,
                 backgroundColor: Colors.white,
                 expandedHeight: MediaQuery.of(context).size.height / 2,
                 elevation: 0,
-                title: Text(
-                  scrolled ? 'Sliver App Bar 1' : '',
-                  style: const TextStyle(
-                    color: Colors.black87,
+                title: AnimatedOpacity(
+                  opacity: scrolled ? 1 : 0,
+                  duration: const Duration(milliseconds: 700),
+                  child: const Text(
+                    'Sliver App Bar 1',
+                    style: TextStyle(
+                      color: Colors.black87,
+                    ),
                   ),
                 ),
                 flexibleSpace: FlexibleSpaceBar(
