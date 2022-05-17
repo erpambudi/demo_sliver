@@ -1,3 +1,4 @@
+import 'package:demo_sliver/detail_page.dart';
 import 'package:demo_sliver/sliver_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SliverAppBarDemo(),
+      home: const DetailPage(),
     );
   }
 }
